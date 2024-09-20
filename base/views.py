@@ -71,7 +71,7 @@ def home(request):
     ) # filters room based on query
 
     topic = Topic.objects.all()
-    room_messages = Message.objects.all()
+    room_messages = Message.objects.filter(Q(room__topic__name__icontains=q))
 
     context =  {'rooms': rooms, 'topics': topic, 'room_messages': room_messages}
     return render(request, 'base/home.html', context)
