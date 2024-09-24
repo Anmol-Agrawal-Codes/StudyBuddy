@@ -5,7 +5,7 @@
     <div class="room scroll">
       <div class="room__top">
         <div class="room__topLeft">
-          <a href="{{ request.META.HTTP_REFERER|default:'/' }}">
+          <a href="{% if request.META.HTTP_REFERER != current_url %}{{ request.META.HTTP_REFERER|default:'/' }}{% else %}{% url 'home' %}{% endif %}">
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@
       <div class="room__message">
         <form method="POST" action="">
           {% csrf_token %}
-          <input name="" placeholder="Write your message here..." />
+          <input name="body" placeholder="Write your message here..." />
         </form>
       </div>
       {% endif %}
