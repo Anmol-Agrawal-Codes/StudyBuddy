@@ -3,11 +3,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic, Message
-from .forms import RoomForm, UserForm
+from .models import Room, Topic, Message, User
+from .forms import RoomForm, UserForm, MyUserCreationForm
 
 def loginPage(request):
     page = 'login'
@@ -39,9 +37,10 @@ def logoutUser(request):
 
 def registerPage(request):
     page = 'register'
-    form = UserCreationForm()
+    form = MyUserCreationForm()
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        print(request.FILES)
+        form = MyUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
@@ -164,7 +163,7 @@ def updateUser(request):
     form = UserForm(instance=user)
 
     if request.method == 'POST':
-        form = UserForm(request.POST, instance=user)
+        form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return redirect('profile', pk=user.id)

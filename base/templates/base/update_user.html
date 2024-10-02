@@ -25,7 +25,7 @@
       </div>
 
       <div class="settings layout__body">
-        <form class="form" action="" method="POST">
+        <form class="form" action="" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="form__group">
             {% for field in form%}
