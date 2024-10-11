@@ -10,5 +10,3 @@ python3.12 manage.py migrate --noinput
 
 echo "Collect Static"
 python3.12 manage.py collectstatic --noinput --clear
-
-echo "Build Completed!"
