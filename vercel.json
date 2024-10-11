@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "STUDYBUD/wsgi.py",
+            "src": "studybud/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "15mb",
@@ -24,7 +24,7 @@
         },
         {
             "src": "/{.*}",
-            "dest": "STUDYBUD/wsgi.py"
+            "dest": "studybud/wsgi.py"
         }
     ]
 }
