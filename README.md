@@ -1,1 +1,1 @@
-**Live Website**: [StudyBuddy](https://vercel.live/link/study-buddy-silk.vercel.app?via=deployment-domains-list&p=1)
+**Live Website**: [StudyBuddy](https://study-buddy-silk.vercel.app/))
