@@ -1,1 +1,1 @@
-**Live Website**: https://fluttering-lois-anmol123-f86b3f4b.koyeb.app/
+**Live Website**: [StudyBuddy](https://vercel.live/link/study-buddy-silk.vercel.app?via=deployment-domains-list&p=1)
