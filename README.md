@@ -1,1 +1,1 @@
-**Live Website**: [StudyBuddy](https://study-buddy-silk.vercel.app/))
+**Live Website**: [StudyBuddy](https://study-buddy-silk.vercel.app/)
